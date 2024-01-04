@@ -1,0 +1,16 @@
+h1 {
+    color:blue;
+}
+
+a {
+    color:red;
+    position: relative;
+}
+
+a:hover {
+    text-shadow:  0 0 .8em blue;;
+}
+
+a:active {
+    top:2px;
+}

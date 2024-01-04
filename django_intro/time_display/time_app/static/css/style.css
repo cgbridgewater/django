@@ -1,0 +1,43 @@
+body {
+    background-color: sienna;
+    padding-top: 30px;
+}
+
+.title, .time_container {
+    width: 400px;
+    margin: 20px auto;
+    color: lightskyblue;
+    background-color: rgba(165, 42, 42, 0.5);
+    border: 3px solid darkred;
+    border-radius: 20px;
+    box-shadow: 2px 2px 8px black;
+    text-align: center;
+}
+
+.button_container {
+    width: 150px;
+    margin:0 auto
+}
+
+button {
+    width: 150px;
+    height:30px;
+    position: relative;
+    border: 3px solid rgba(165, 42, 42, 1);
+    border-radius: 5px;
+    background-color: lightblue;
+    color: darkred;
+    box-shadow: 2px 2px 2px black;
+}
+
+button:hover, button:active {
+    color:lightblue;
+    border: 3px solid lightblue;
+    background-color: darkred;
+    box-shadow:  2px 5px 5px black;
+}
+
+button:active {
+    top:4px;
+    box-shadow:  2px 2px 5px black;
+}

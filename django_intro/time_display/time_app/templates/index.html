@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOJO TIME</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">    
+</head>
+<body>
+    <div class="title">
+        <p>The Current time and date:</p>
+    </div>
+
+    <div class="time_container">
+        <h3>Today Is: {{ date }}</h3>
+        <h3>{{ time }}</h3>
+    </div>
+
+    <div class="button_container">
+        <a href="/alttime"><button>Ninja Way</button></a>
+    </div>
+
+</body>
+</html>
