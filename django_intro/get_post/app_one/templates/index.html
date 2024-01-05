@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/script.js' %}"></script>
+<body>
+    <div class="formContainer">
+        <h1>Dojo Survey</h1>
+        <form action="result" method="POST">
+            {% csrf_token %}
+
+            <div class="formation">
+                <label for="name">Name:</label>
+                <input class="input" id="name" name="name" type="text" autofocus>
+            </div>
+
+            <div class="formation">
+                <label for="email">Email: </label>
+                <input class="input" id="email" name="email" type="text">
+            </div>
+
+            <div class="formation">
+                <label for="text">Text:</label>
+                <input class="input" id="text" name="text" type="text">
+            </div>
+            
+            <div class="formation">
+                <label for="ninja">Ninja Status:</label>
+                <label class="radioLabel">
+                    <input class="radio" id="ninja" type="radio" name="ninja" value="Black Belt"/>
+                    <span>Black Belt</span>
+                </label>
+
+                <label class="radioLabel">
+                    <input class="radio" id="ninja" type="radio" name="ninja" value="None" checked/>
+                    <span>None</span>
+                </label>
+            </div>
+
+            <div class="checkFormation">
+                <p>Sign up for all our spam emails:</p>
+                <br>
+                <div class="checkboxContainer">
+                    <label id="spamLabel" for="spam" class="check-box"><input name="spam" type="checkbox" id="spam" value="Yes Please!!"><span id="spamSpan"></span>  <b>Yes Please!</b> <em>Who doesn't love spam!!</em></label>
+                </div>
+            </div>
+
+            <div class="buttonContainer">
+                <button class="button" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    </body>
+    </html>

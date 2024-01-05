@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="viewOneContainer">
+
+        <h1>Results Page</h1>
+
+        <div class="flexControl">
+            <h3>Name : </h3>
+            <h4 class="rightSide">{{ name_on_template }}</h4>
+        </div>
+        
+        <div class="flexControl">
+            <h3>Email : </h3>
+            <h4 class="rightSide">{{ email_on_template }}</h4>
+        </div>
+        
+        <div class="flexControl">
+            <h3>Message : </h3>
+            <h4 class="rightSide">{{ text_on_template }}</h4>
+        </div>
+        
+        <div class="flexControl">
+            <h3>Ninja Status : </h3>
+            <h4 class="rightSide">{{ ninja_on_template }}</h4>
+        </div>
+        
+        <div class="flexControl">
+            <h3>Sign Up For Spam Emails : </h3>
+            <h4 class="rightSide">{{ spam_on_template }}</h4>
+        </div>
+        
+        <div class="buttonContainer">
+            <a class="button" href="/">Home</a>
+        </div>
+    </div>
+</body>
+</html>
