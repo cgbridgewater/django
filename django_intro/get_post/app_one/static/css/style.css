@@ -42,8 +42,9 @@ h4 {
     align-items: center;
 }
 
-.input {
-	background-color: #C2E7DA;
+
+.input, .select {
+    background-color: #C2E7DA;
 	border:2px solid #3E37F2;
 	border-radius:2px;
 	width:190px;
@@ -51,7 +52,14 @@ h4 {
     font-weight: 600;
 }
 
-.input:hover {
+.select {
+    width: 204px;
+    text-align: center;
+    cursor: pointer;
+    outline:none;
+}
+
+.input:hover, .select:hover {
 	background-color: honeydew;
 }
 
