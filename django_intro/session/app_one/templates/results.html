@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p>Name: {{ request.session.name }}</p>
+    <p>Count: {{ request.session.count }}</p>
+
+    <form action="increase" method="POST">
+        {% csrf_token %}
+        <button type="submit">Increase</button>
+    </form>
+
+    <form action="decrease" method="POST">
+        {% csrf_token %}
+        <button type="submit">Decrease</button>
+    </form>
+
+    <a href="/logout">Logout</a>
+</body>
+</html>
