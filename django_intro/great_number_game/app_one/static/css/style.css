@@ -36,12 +36,6 @@ h1, .text {
     margin: 0;
 }
 
-.green {
-    color: lightgreen;
-    font-size: 20px;
-    font-weight: 800;
-    margin: 0;
-}
 
 .form_container, .red, .green, .alignment {
     display: flex;
@@ -50,8 +44,20 @@ h1, .text {
     align-items: center;
 }
 
+.alignment {
+    padding-top: 15px;
+}
+
+.green {
+    color: lightgreen;
+    font-size: 20px;
+    font-weight: 800;
+    margin: 5px 0;
+    height:130px;
+}
+
 form {
-    margin: 20px
+    margin: 10px
 }
 
 input {

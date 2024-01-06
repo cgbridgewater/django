@@ -9,39 +9,34 @@
     <script src="{% static 'js/script.js' %}"></script>
 </head>
 <body>
-    
-    <div class="container">
-        <h1 class="title">Top 10</h1>
-
-        
-        <table id="displayTable"  class="table .table-hover">
-            <thead>
-                <tr class="bg-primary">
-                    <th scope="col">Player Name </th>
-                    <th scope="col">Attempts </th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for leader in request.session.leaderboard %}
-                <tr>
-                    <td>{{leader.0}}</td>
-                    <td>{{leader.1}}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+    <div class="wrapper">
+        <div class="container">
+            <h1 class="title">Top 10</h1>
+            <table id="displayTable"  class="table .table-hover">
+                <thead>
+                    <tr class="bg-primary">
+                        <th scope="col">Player Name </th>
+                        <th scope="col">Attempts </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for leader in request.session.leaderboard %}
+                    <tr>
+                        <td>{{leader.0}}</td>
+                        <td>{{leader.1}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="results">
+            <h2 class="title">Your Score</h2>
+            <p class="title">Name: <b>{{ request.session.current_score.0 }}</b></p>
+            <p class="title">Attempts: <b>{{ request.session.current_score.1 }}</b></p>
+        </div>
+        <div class="button_box">
+            <button><a href="/">HOME</a></button>
+        </div>
     </div>
-    
-    <div class="results">
-        <h2 class="title">Your Score</h2>
-        <p class="title">Name: <b>{{ request.session.current_score.0 }}</b></p>
-        <p class="title">Attempts: <b>{{ request.session.current_score.1 }}</b></p>
-    </div>
-    
-    
-    <div class="button_box">
-        <button><a href="/">HOME</a></button>
-    </div>
-
 </body>
 </html>

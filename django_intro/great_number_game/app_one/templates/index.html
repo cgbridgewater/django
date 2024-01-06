@@ -6,7 +6,6 @@
     <title>Document</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <script src="{% static 'js/script.js' %}"></script>
 </head>
 <body>
     <h1>I am thinking of a number. Can you guess it?</h1>
@@ -18,7 +17,7 @@
                 {% elif play_again %}
                     <p></p>
                 {% else %}
-                <p class="text">You have guessed {{request.session.guesses}} time(s).</p>
+                <p class="text">You have guessed {{request.session.attempts}} time(s).</p>
                 <div class="form_container">
                     <form action="/" method="post">
                         {% csrf_token %}
@@ -27,19 +26,6 @@
                     </form>
                 </div>
                 {% endif %}
-            {% else %}
-            <div class="form_container">
-                <p class="text">Take A Guess!</p>
-                <form action="/" method="post">
-                    {% csrf_token %}
-                    <input type="number" name="guess" value="0" min="0" max="100" autofocus>
-                    <button class="button" type="submit">GUESS!</button> 
-                </form>
-            </div>
-            {% endif %}
-        </div>
-        <div>
-            {% if playing %}
                 {% if play_again or game_over %}
                     {% if game_over %}
                     <div class="red">
@@ -67,6 +53,15 @@
                 <div class="red">
                     <p>{{output}}</p>
                 {% endif %}
+            {% else %}
+            <div class="form_container">
+                <p class="text">Take A Guess!</p>
+                <form action="/" method="post">
+                    {% csrf_token %}
+                    <input type="number" name="guess" value="0" min="0" max="100" autofocus>
+                    <button class="button" type="submit">GUESS!</button> 
+                </form>
+            </div>
             {% endif %}
         </div>
     </div>
