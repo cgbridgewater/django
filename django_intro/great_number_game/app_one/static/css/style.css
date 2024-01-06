@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: cadetblue;
+    padding: 50px;
+}
+
+h1, .text {
+    text-align: center;
+    color: blue;
+}
+
+.text {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 0;
+}
+
+.container {
+    width: 30%;
+    padding: 15px;
+    margin: 30px auto;
+    border: 4px solid blue;
+    border-radius: 5px;
+    background-color: lightslategray;
+    height: 150px;
+}
+
+.red {
+    color: red;
+    font-size: 20px;
+    font-weight: 800;
+    margin: 0;
+}
+
+.green {
+    color: lightgreen;
+    font-size: 20px;
+    font-weight: 800;
+    margin: 0;
+}
+
+.form_container, .red, .green, .alignment {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    margin: 20px
+}
+
+input {
+    text-align: center;
+    width: 175px;
+    font-size: 20px;
+    font-weight: 700;   
+    padding: 3px 5px;
+    background-color: blue;
+    border: 4px solid #fc8f5dbc;
+    color: white;
+}
+
+input:focus {
+    outline: 0;
+}
+
+.button {
+    background-color: blue;
+    border: 4px solid #fc8f5dbc;
+    border-radius: 5px;
+    padding: 3px 5px;
+    color: #fc8f5dbc;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 700;
+    position: relative;
+}
+
+.button:hover {
+    border-color: blue;
+    background-color: #fc8f5dbc;
+    box-shadow: 3px 3px 6px black;
+    color:blue;
+}
+
+.button:active {
+    top:2px;
+    box-shadow: 1px 1px 6px black;
+}

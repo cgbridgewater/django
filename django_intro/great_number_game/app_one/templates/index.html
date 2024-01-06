@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/script.js' %}"></script>
+</head>
+<body>
+    <h1>I am thinking of a number. Can you guess it?</h1>
+    <div class="container">
+        <div class="alignment">
+            {% if playing %}
+                {% if game_over %}
+                    <p class="red">You have guessed 5 times. Game Over.</p>
+                {% elif play_again %}
+                    <p></p>
+                {% else %}
+                <p class="text">You have guessed {{request.session.guesses}} time(s).</p>
+                <div class="form_container">
+                    <form action="/" method="post">
+                        {% csrf_token %}
+                        <input type="number" name="guess" value="0" min="0" max="100" autofocus>
+                        <button class="button" type="submit">GUESS!</button> 
+                    </form>
+                </div>
+                {% endif %}
+            {% else %}
+            <div class="form_container">
+                <p class="text">Take A Guess!</p>
+                <form action="/" method="post">
+                    {% csrf_token %}
+                    <input type="number" name="guess" value="0" min="0" max="100" autofocus>
+                    <button class="button" type="submit">GUESS!</button> 
+                </form>
+            </div>
+            {% endif %}
+        </div>
+        <div>
+            {% if playing %}
+                {% if play_again or game_over %}
+                    {% if game_over %}
+                    <div class="red">
+                        <p>{{output}}</p>
+                        <form action="/">
+                            {% csrf_token %}
+                            <button class="button" type="submit">Play Again</button> 
+                        </form>
+                    </div>
+                    {% else %}
+                    <div class="green">
+                        <p>{{output}}</p>
+                        <form action="/">
+                            {% csrf_token %}
+                            <button class="button" type="submit">Play Again</button> 
+                        </form>
+                        <form action="/scoreboard" method="post">
+                            {% csrf_token %}
+                            <input type="text" name="name" placeholder="Enter Name Here..." autofocus>
+                            <button class="button" type="submit">Submit Score</button> 
+                        </form>
+                    </div>
+                    {% endif %}
+                {% else %}
+                <div class="red">
+                    <p>{{output}}</p>
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
