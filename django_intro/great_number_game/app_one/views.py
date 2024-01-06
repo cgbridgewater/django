@@ -16,7 +16,7 @@ def index(request):
         number = request.session['number']
     # create a random number for the magic number #
     else:
-        number = random.randint(1, 100)
+        number = random.randint(1, 50)
         request.session['number'] = number
     # console the magic number
     print(number)

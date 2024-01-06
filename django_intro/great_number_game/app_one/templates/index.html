@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h1>I am thinking of a number. Can you guess it?</h1>
+    <h1>I am thinking of a number between 1 and 50.</h1>
+    <h1>Can you guess it?</h1>
     <div class="container">
         <div class="alignment">
             {% if playing %}
@@ -21,7 +22,7 @@
                 <div class="form_container">
                     <form action="/" method="post">
                         {% csrf_token %}
-                        <input type="number" name="guess" value="0" min="0" max="100" autofocus>
+                        <input type="number" name="guess" value="0" min="0" max="50" autofocus>
                         <button class="button" type="submit">GUESS!</button> 
                     </form>
                 </div>
