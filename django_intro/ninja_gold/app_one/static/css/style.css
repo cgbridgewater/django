@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: darkred;
+    padding: 30px 10px;
+}
+
+h1 {
+    text-align: center;
+    color:gold;
+}
+
+h3 {
+    color:bisque;
+    font-weight: 700;
+    margin: 10px 0 10px 5%;
+}
+
+h2, p {
+    margin: 3px;
+    text-align: center;
+    color: darkred;
+}
+
+h4 {
+    margin-left: 10px;
+    color: darkred;
+}
+
+.gold {
+    color:gold;
+}
+
+.forms_wrapper {
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 1030px) {
+    .forms_wrapper{
+        width: 480px    
+    }
+}
+
+.form_card {
+    width: 200px;
+    height: 80px;
+    margin:10px;
+    padding-bottom: 10px;
+    border: 2px solid gold;
+    background-color: bisque;
+}
+
+form {
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    position: relative;
+    padding: 3px 5px;
+    color:darkred;
+    background-color: gold;
+    border: 2px solid darkred;
+}
+
+button:hover {
+    padding: 3px 5px;
+    color:gold;
+    background-color: darkred;
+    border-color: gold;
+    box-shadow: 4px 4px 8px darkgoldenrod;
+}
+
+button:active {
+    top:1px;
+    box-shadow: 4px 1px 8px darkgoldenrod;
+    transform: scale(90%);
+}
+
+.activities_wrapper {
+    border: 4px double gold;
+    background-color: bisque;
+    height: 200px;
+    width: calc(90% - 10px);
+    margin: 0px auto;
+    overflow-y: scroll;
+}
+
+.fixed {
+    text-align: start;
+    margin: 30px 5% 10px 5%;
+    color: gold;
+}
+
+.activities {
+    margin: 2px;
+}
+
+.activity_win, .activity_lose, .activity_wash {
+    text-align: start;
+    padding-left: 20px;
+}
+
+.activity_win {
+    color: green;
+}
+
+.activity_lose {
+    color: darkred;
+}
+
+.activity_wash {
+    color: blue;
+}
