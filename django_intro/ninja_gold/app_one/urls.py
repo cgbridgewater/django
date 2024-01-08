@@ -1,12 +1,10 @@
 from django.urls import path
 from . import views
 
+app_name = 'app_one'
+
 urlpatterns = [
-    path('', views.index),
-    # path('process_money', views.process_money), #standard way
-    path('process_money/farm', views.farm),
-    path('process_money/cave', views.cave),
-    path('process_money/house', views.house),
-    path('process_money/casino', views.casino),
-    path('process_money/reset', views.reset),
+    path('', views.index, name="my_index"),
+    path('process_money', views.process_money, name="process_money"),
+    path('reset', views.reset, name="reset"),
 ]
