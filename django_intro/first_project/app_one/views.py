@@ -31,7 +31,7 @@ def destroy(request, id):
     return redirect("/blogs")
 
 
-def json(request):
+def bonus(request):
     return JsonResponse({
         "title":"My first blog",
         " content": "Lorem, ipsum dolor sit amet consectuter adipisicing elit."

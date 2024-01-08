@@ -1,16 +1,14 @@
 from django.urls import path
 from . import views
-
+app_name = "blogs"
 
 urlpatterns = [
-    path('', views.root),
-    path('blogs', views.index),
-    path('blogs/new', views.new),
-    path('blogs/create', views.create),
-    path('blogs/<int:id>', views.show),
-    path('blogs/<int:id>/edit', views.edit),
-    path('blogs/<int:id>/delete', views.destroy),
-    path('blogs/json', views.json),
-
+    path('', views.index, name="index"),
+    path('new', views.new, name="new"),
+    path('create', views.create, name="create"),
+    path('<int:id>', views.show, name="show"),
+    path('<int:id>/edit', views.edit, name="edit"),
+    path('<int:id>/delete', views.destroy, name="destroy"),
+    path('json', views.bonus, name="bonus",)
 ]
 
