@@ -1,0 +1,61 @@
+## MODEL EXAMPLE ##
+from django.db import models
+
+class Author(models.Model):
+    name = models.CharField(max_length = 255)
+    created_at = models.DateTimeField(auto_now_add = True)
+    updated_at = models.DateTimeField(auto_now = True)
+
+class Book(models.Model):
+    title = models.CharField(max_length = 255)
+    author = models.ForeignKey(Author, related_name = "books", on_delete = models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add = True)
+    updated_at = models.DateTimeField(auto_now = True)
+
+
+
+
+## Shell/ORM QUERY EXAMPLE ##
+
+
+
+
+
+>>> from one_to_many.models import Author, Book
+
+>>> Author.objects.create(name="JK Rowling")                 
+<Author: Author object (1)>
+
+>>> Author.objects.create(name="Fyodor Dostoevksy")
+<Author: Author object (2)>
+
+>>> Author.objects.create(name="Dr. Suess")
+<Author: Author object (3)>
+
+>>> new_book = Book.objects.create(title="Crime and Punishment", author= Author.objects.get(id=2))
+>>> print(new_book)
+Book object (1)
+
+>>> print(new_book.author)
+Author object (2)
+
+>>> print(new_book.author.name)
+Fyodor Dostoevksy
+
+>>> another_book = Book.objects.create(title="The brothers Karamazov", author = Author.objects.get(id=2))  
+>>> another_book.author.name
+'Fyodor Dostoevksy'
+
+## REVERSE LOOK UP ##
+>>> Author.objects.get(id=2).books
+<django.db.models.fields.related_descriptors.create_reverse_many_to_one_manager.<locals>.RelatedManager object at 0x000002458E7B8DF0>  
+
+>>> Author.objects.get(id=2).books.all()
+<QuerySet [<Book: Book object (1)>, <Book: Book object (2)>]>
+
+## FOR LOOP TO GET ALL BOOKS BY TITLE
+>>> for book in Author.objects.get(id=2).books.all():
+...     print(book.title)
+...
+Crime and Punishment
+The brothers Karamazov
