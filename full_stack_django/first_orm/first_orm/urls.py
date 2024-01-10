@@ -19,4 +19,5 @@ from django.urls import path, include
 urlpatterns = [
     path('', include("movies.urls"), name= "movies"),
     path('users/', include("users.urls"), name= "users"),
+    path('one_to_many/', include("one_to_many.urls"), name= "one_to_many"),
 ]
