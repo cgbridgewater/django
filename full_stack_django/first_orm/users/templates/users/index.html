@@ -6,6 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Test Users Route</h1>
+    <h1>All users from database</h1>
+
+    <ul>
+        {% for user in all_users %}
+            <li> {{ user.first_name}} {{ user.last_name}}</li>
+        {% endfor %}
+    </ul>
+    
 </body>
 </html>
