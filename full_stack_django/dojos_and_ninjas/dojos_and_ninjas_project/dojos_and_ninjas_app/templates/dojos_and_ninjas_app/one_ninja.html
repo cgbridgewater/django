@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Ninja</title>
+</head>
+<body>
+    ONE NINJA TEST
+
+    <p>Name: {{ one_ninja.first_name }} {{ one_ninja.last_name }}</p>
+    <p>Dojo Location: <a href="/dojo/{{one_ninja.dojo.id}}/view">{{ one_ninja.dojo.name }}</a></p>
+
+    <button><a href="/">HOME</a></button>
+</body>
+</html>

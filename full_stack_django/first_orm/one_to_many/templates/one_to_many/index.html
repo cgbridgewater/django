@@ -6,6 +6,34 @@
     <title>Document</title>
 </head>
 <body>
-    Test one to many link
+    <h1>TESTING 1:m</h1>
+
+    <h3>Display All authors from database, and their books</h3>
+
+    <ul>
+        {% for author in all_authors %}
+        <li>{{author.name}}
+            <ul>
+            <!-- looping through each author's books! -->
+            {% for book in author.books.all %}
+                <li><em>{{book.title}}</em></li>
+            {% endfor %}
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <h3>Display All authors</h3>
+    {% for author in all_authors %}
+    <li>{{author.name}}
+    {% endfor %}
+
+    
+    <h3>Display Dr. Suess Books</h3>
+    <ul>
+        {% for book in dr_suess_books %}
+            <li>{{ book.title }}</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>

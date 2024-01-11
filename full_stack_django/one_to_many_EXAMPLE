@@ -59,3 +59,23 @@ Fyodor Dostoevksy
 ...
 Crime and Punishment
 The brothers Karamazov
+
+
+
+
+## Another Example ##
+# create a few books
+>>> green_eggs = Book.objects.create(title="Green Eggs and Ham", author = Author.objects.get(id=3))
+>>> lorax = Book.objects.create(title="The Lorax", author = Author.objects.get(id=3))          
+>>> cat_in_hat = Book.objects.create(title="The Cat In The Hat", author = Author.objects.get(id=3)) 
+# reverse lookup by author
+>>> Author.objects.get(id=3).books
+<django.db.models.fields.related_descriptors.create_reverse_many_to_one_manager.<locals>.RelatedManager object at 0x0000024591C77BE0>  
+#  loop through all the authors books and print the title of them
+>>> for book in Author.objects.get(id=3).books.all():
+...     print(book.title)
+...
+Green Eggs and Ham
+The Lorax
+The Cat In The Hat
+>>>

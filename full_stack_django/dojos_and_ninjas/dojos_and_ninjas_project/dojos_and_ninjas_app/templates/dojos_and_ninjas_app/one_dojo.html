@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Dojo</title>
+</head>
+<body>
+    ONE DOJO TEST
+
+    <h2>Dojo Campus: {{ one_dojo.name }}</h2>
+    <p>Dojo City: {{ one_dojo.city }}, {{ one_dojo.state }}</p>
+    <p>Dojo Description: {{ one_dojo.desc }}</p>
+
+    <ul>
+        {% for ninja in one_dojo.ninjas.all %}
+        <li><a href="/ninja/{{ ninja.id }}/view">{{ ninja.first_name }} {{ ninja.last_name }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <button><a href="/">HOME</a></button>
+    
+</body>
+</html>

@@ -1,9 +1,10 @@
 from django.shortcuts import render
-
-# Create your views here.
-from django.shortcuts import render
-
-# Create your views here.
+from .models import Book, Author
 
 def index(request):
-    return render(request, "one_to_many/index.html")
+    context = {
+        "all_authors" : Author.objects.all(),
+        "dr_suess_books" : Author.objects.get(id=3).books.all()
+    }
+
+    return render(request, "one_to_many/index.html", context)
