@@ -48,7 +48,7 @@
         <h3>Display All Dojos, and their Ninjas</h3>
         <ul>
             {% for dojo in all_dojos %}
-            <li>Ninjas at the <a href="/dojo/{{dojo.id}}/view">{{dojo.name}}</a>  -  {{dojo.ninjas.all.count}} ninja(s)</li>
+            <li>Ninjas at the <a href="/dojo/{{dojo.id}}/view">{{dojo.name}}</a>  -  {{dojo.ninjas.all.count}} ninja(s) <a href="/dojo/{{dojo.id}}/delete">Delete</a></li>
                 <ul>
                     <!-- looping through each dojos's ninjas! -->
                     {% for ninja in dojo.ninjas.all %}

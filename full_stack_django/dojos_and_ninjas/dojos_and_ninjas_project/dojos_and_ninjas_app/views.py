@@ -45,8 +45,15 @@ def one_ninja(request, id):
     return render(request, "dojos_and_ninjas_app/one_ninja.html", context)
 
 
-## Delete Route ##
-def delete(request, id):
+## Delete Ninja Route ##
+def ninja_delete(request, id):
     ninja_to_delete = Ninja.objects.get(id=id)
     ninja_to_delete.delete()
+    return redirect("/")
+
+
+## Delete Dojo Route ##
+def dojo_delete(request, id):
+    dojo_to_delete = Dojo.objects.get(id=id)
+    dojo_to_delete.delete()
     return redirect("/")
