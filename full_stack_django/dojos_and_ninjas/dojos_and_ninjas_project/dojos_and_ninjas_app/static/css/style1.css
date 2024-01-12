@@ -1,0 +1,56 @@
+h1,h2 {
+    color: white;
+}
+
+body {
+    background-color: #002433;
+}
+
+/* FOOTER STYLE */
+#bike_footer {
+background-image: url('../../static/img/mountains.png');
+background-repeat: repeat;
+background-position: 0 0;
+animation: ground 180s linear infinite;
+}
+@keyframes ground {
+from {
+background-position: 0 0;
+}
+to {
+background-position: -12000px 0px;
+}
+}
+
+#image{
+position:absolute;
+margin-top: 140px;
+}
+.jumping {
+transform: translate(0,-10px) rotate(-15deg);
+-webkit-transform: translate(0,-10px) rotate(-15deg); /** Chrome & Safari **/
+-o-transform: translate(0,-10px) rotate(-15deg); /** Opera **/
+-moz-transform: translate(0,-10px) rotate(-15deg); /** Firefox **/
+}
+.jumpinghigh {
+transform: translate(0,-30px) rotate(-25deg);
+-webkit-transform: translate(0,-30px) rotate(-25deg); /** Chrome & Safari **/
+-o-transform: translate(0,-30px) rotate(-25deg); /** Opera **/
+-moz-transform: translate(0,-30px) rotate(-25deg); /** Firefox **/
+}
+.flipped {
+-moz-transform: scaleX(-1);
+-o-transform: scaleX(-1);
+-webkit-transform: scaleX(-1);
+transform: scaleX(-1);
+filter: FlipH;
+-ms-filter: "FlipH";
+}
+.flipped.jumping {
+transform: scaleX(-1) translate(0, -10px) rotate(-15deg);
+-webkit-transform: scaleX(-1) translate(0, -10px) rotate(-15deg);
+-o-transform: scaleX(-1) translate(0, -10px) rotate(-15deg);
+-moz-transform: scaleX(-1) translate(0, -10px) rotate(-15deg);
+}
+
+/* </style> */
