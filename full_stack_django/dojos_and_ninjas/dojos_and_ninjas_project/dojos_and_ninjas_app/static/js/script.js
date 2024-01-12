@@ -1,3 +1,5 @@
+// Script for bike_footer
+
 var mouseCurrent = 0;
 var mouseX = 0, mouseY = 0;
 var follower = document.querySelector("#image");
