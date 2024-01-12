@@ -1,56 +1,158 @@
-h1,h2 {
-    color: white;
+* {
+    margin: 0;
+    padding: 0;
 }
 
 body {
     background-color: #002433;
 }
 
+h1,h2, h3 {
+    color: white;
+    text-align: center;
+}
+
+p {
+    color: coral;
+}
+
+a {
+    color: khaki;
+}
+
+.delete {
+    color: crimson;
+    margin-left: 15px;
+}
+
+.container {
+    width: 90%;
+    margin: 30px auto 15px auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+form {
+    width: 325px;
+}
+
+.formation {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left,.right {
+    border: 2px solid coral;
+    padding: 5px;
+    margin: 10px 0;
+}
+
+label { 
+    color: white;
+}
+
+input {
+    margin:5px 10px;
+    width: 200px;
+}
+
+select {
+    margin:5px 10px;
+    width: 204px;
+}
+
+.button_wrapper {
+    width: 200px;
+    margin:5px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.results {
+    width: 90%;
+    max-width: 620px;
+    margin: 10px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.inner_result {
+    width: 275px;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+li {
+    margin-left: 20px;
+    text-decoration: white;
+}
+
+ul {
+    list-style: none;
+    margin-top: 5px;
+}
+
+ul li::before {
+    content: "\2022";
+    color: coral;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em; 
+}
+
 /* FOOTER STYLE */
 #bike_footer {
-background-image: url('../../static/img/mountains.png');
-background-repeat: repeat;
-background-position: 0 0;
-animation: ground 180s linear infinite;
+    background-image: url('../../static/img/mountains.png');
+    background-repeat: repeat;
+    background-position: 0 0;
+    animation: ground 180s linear infinite;
 }
+
 @keyframes ground {
-from {
-background-position: 0 0;
-}
-to {
-background-position: -12000px 0px;
-}
+    from {
+    background-position: 0 0;
+    }
+    to {
+    background-position: -12000px 0px;
+    }
 }
 
 #image{
-position:absolute;
-margin-top: 140px;
-}
-.jumping {
-transform: translate(0,-10px) rotate(-15deg);
--webkit-transform: translate(0,-10px) rotate(-15deg); /** Chrome & Safari **/
--o-transform: translate(0,-10px) rotate(-15deg); /** Opera **/
--moz-transform: translate(0,-10px) rotate(-15deg); /** Firefox **/
-}
-.jumpinghigh {
-transform: translate(0,-30px) rotate(-25deg);
--webkit-transform: translate(0,-30px) rotate(-25deg); /** Chrome & Safari **/
--o-transform: translate(0,-30px) rotate(-25deg); /** Opera **/
--moz-transform: translate(0,-30px) rotate(-25deg); /** Firefox **/
-}
-.flipped {
--moz-transform: scaleX(-1);
--o-transform: scaleX(-1);
--webkit-transform: scaleX(-1);
-transform: scaleX(-1);
-filter: FlipH;
--ms-filter: "FlipH";
-}
-.flipped.jumping {
-transform: scaleX(-1) translate(0, -10px) rotate(-15deg);
--webkit-transform: scaleX(-1) translate(0, -10px) rotate(-15deg);
--o-transform: scaleX(-1) translate(0, -10px) rotate(-15deg);
--moz-transform: scaleX(-1) translate(0, -10px) rotate(-15deg);
+    position:absolute;
+    margin-top: 140px;
 }
 
-/* </style> */
+.jumping {
+    transform: translate(0,-10px) rotate(-15deg);
+    -webkit-transform: translate(0,-10px) rotate(-15deg); /** Chrome & Safari **/
+    -o-transform: translate(0,-10px) rotate(-15deg); /** Opera **/
+    -moz-transform: translate(0,-10px) rotate(-15deg); /** Firefox **/
+}
+
+.jumpinghigh {
+    transform: translate(0,-30px) rotate(-25deg);
+    -webkit-transform: translate(0,-30px) rotate(-25deg); /** Chrome & Safari **/
+    -o-transform: translate(0,-30px) rotate(-25deg); /** Opera **/
+    -moz-transform: translate(0,-30px) rotate(-25deg); /** Firefox **/
+}
+
+.flipped {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+
+.flipped.jumping {
+    transform: scaleX(-1) translate(0, -10px) rotate(-15deg);
+    -webkit-transform: scaleX(-1) translate(0, -10px) rotate(-15deg);
+    -o-transform: scaleX(-1) translate(0, -10px) rotate(-15deg);
+    -moz-transform: scaleX(-1) translate(0, -10px) rotate(-15deg);
+}

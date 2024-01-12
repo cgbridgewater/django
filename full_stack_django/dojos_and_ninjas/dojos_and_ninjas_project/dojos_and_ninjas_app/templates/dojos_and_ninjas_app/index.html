@@ -8,61 +8,79 @@
     <link rel="stylesheet" href="{% static '/css/style1.css' %}">
 </head>
 <body>
-    
     <div class="container">
         <div class="left">
             <h1>Add a Dojo</h1>
             <form action="/create" method="POST">
                 {% csrf_token %}
                 <input type="hidden" name="posty_post" value="create_dojo">
-                <label for="name">Dojo Name: <input type="text" name="name" id="name" placeholder="Dojo Name..."></label>
-                <label for="city">Dojo City: <input type="text" name="city" id="city" placeholder="Dojo City..."></label>
-                <label for="state">Dojo State: <input type="text" name="state" id="state" placeholder="Dojo State..."></label>
-                <label for="desc">Dojo Desc: <input type="text" name="desc" id="desc" placeholder="Dojo Desc..."></label>
-                <button type="submit">Submit</button>
+                <div class="formation">
+                    
+                </div>
+                <div class="formation">
+                    <label for="name">Dojo Name:</label>
+                    <input type="text" name="name" id="name" placeholder="Dojo Name...">
+                </div>
+                <div class="formation">
+                    <label for="city">Dojo City:</label>
+                    <input type="text" name="city" id="city" placeholder="Dojo City...">
+                </div>
+                <div class="formation">
+                    <label for="state">Dojo State:</label>
+                    <input type="text" name="state" id="state" placeholder="Dojo State...">
+                </div>
+                <div class="formation">
+                    <label for="desc">Dojo Desc:</label>
+                    <input type="text" name="desc" id="desc" placeholder="Dojo Desc...">
+                </div>
+                <div class="button_wrapper">
+                    <button type="submit">Submit</button>
+                </div>
             </form>
         </div>
-
-
         <div class="right">
             <h1>Add a Ninja</h1>
             <form action="/create" method="POST">
                 {% csrf_token %}
                 <input type="hidden" name="posty_post" value="create_ninja">
-                <label for="first_name">First Name: <input type="text" name="first_name" id="first_name" placeholder="First Name..."></label>
-                <label for="last_name">Last Name: <input type="text" name="last_name" id="last_name" placeholder="Last Name..."></label>
-                <label for="dojo">Dojo: 
+                <div class="formation">
+                    <label for="first_name">First Name:</label>
+                    <input type="text" name="first_name" id="first_name" placeholder="First Name...">
+                </div>
+                <div class="formation">
+                    <label for="last_name">Last Name:</label>
+                    <input type="text" name="last_name" id="last_name" placeholder="Last Name...">
+                </div>
+                <div class="formation">
+                    <label for="dojo">Dojo:</label> 
                     <select name="dojo" id="dojo">
                         {% for dojo in all_dojos %}
                         <option value={{dojo.id}}>{{dojo.name}}</option>
                         {% endfor %}
                     </select>
-                </label>
+                </div>
+                <div class="button_wrapper">
                     <button type="submit">Submit</button>
+                </div>
             </form>
         </div>
     </div>
-        
-
+    <h3>Display All Dojos, and their Ninjas</h3>
     <div class="results">
-        <h3>Display All Dojos, and their Ninjas</h3>
-        <ul>
-            {% for dojo in all_dojos %}
-            <li>Ninjas at the <a href="/dojo/{{dojo.id}}/view">{{dojo.name}}</a>  -  {{dojo.ninjas.all.count}} ninja(s) <a href="/dojo/{{dojo.id}}/delete">Delete</a></li>
-                <ul>
-                    <!-- looping through each dojos's ninjas! -->
-                    {% for ninja in dojo.ninjas.all %}
-                    <li><em><a href="/ninja/{{ninja.id}}/view">{{ninja.first_name}} {{ninja.last_name}}</em></a> <b><a href="/ninja/{{ninja.id}}/delete">Delete</a></b></li>
-                    {% endfor %}
-                </ul>
-            {% endfor %}
-        </ul>
+        {% for dojo in all_dojos %}
+        <div class="inner_result">
+            <p><a href="/dojo/{{dojo.id}}/view">{{dojo.name}}</a>  -  {{dojo.ninjas.all.count}} ninja(s) <a class="delete" href="/dojo/{{dojo.id}}/delete">Delete Dojo</a></p>
+            <ul>
+                <!-- looping through each dojos's ninjas! -->
+                {% for ninja in dojo.ninjas.all %}
+                <li><em><a href="/ninja/{{ninja.id}}/view">{{ninja.first_name}} {{ninja.last_name}}</em></a> <b><a class="delete" href="/ninja/{{ninja.id}}/delete">Delete Ninja</a></b></li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
     </div>
-
-
-    <br><br><br>
-    <div id="bike_footer" style="height: 220px;" class="hidden-print ">
-        <img id="image" src="../../static/img/bike.png" alt="Bicycle icon that follows mouse movement" height="100" title="Ride Safe!" class="tiptip"/>
+    <div id="bike_footer" style="height: 220px;" class="bike_footer">
+        <img id="image" src="../../static/img/bike.png" alt="Bicycle icon that follows mouse movement" height="100" title="Ride Safe!"/>
         </a>
     </div>
     <script src="{% static 'js/script.js' %}"></script>

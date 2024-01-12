@@ -1,6 +1,3 @@
-// <script>
-// javascript
-
 var mouseCurrent = 0;
 var mouseX = 0, mouseY = 0;
 var follower = document.querySelector("#image");
@@ -22,7 +19,7 @@ mouseCurrent = mouseX;
 
 var xp = 0, yp = 0;
 var loop = setInterval(function() {
-xp += (mouseX - xp) / 60; //32
+xp += (mouseX - xp) / 32; //32
 // yp += (mouseY - yp) / 20; //20
 follower.style.left = xp + "px";
 }, 30);
@@ -34,4 +31,3 @@ follower.classList.add("jumping");
 document.addEventListener("mouseup", function(e) {
 follower.classList.remove("jumping");
 });
-// </script>
